@@ -1,0 +1,14 @@
+.cover{
+    padding:  0% 3% 3% 3%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.sections-seperator img{
+    width: 100%;
+}
+
+.wide-band{
+    padding: 1%;
+    margin-bottom: 2%;
+}
