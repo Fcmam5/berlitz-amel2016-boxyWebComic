@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="webComic">
 <head>
     <meta charset="UTF-8">
     <title>Boxy</title>
@@ -13,111 +13,23 @@
     <!-- My css -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<main>
-<!--Navbar-->
 
+<!--Navbar-->
 <nav class="black white-text">
     <div class="nav-wrapper">
         <a href="#!" class="center brand-logo">Logo</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down">
-            <li><a href="#">Read <span class="new  red badge">4</span></a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="#/chapter">Read <span class="new  red badge">4</span></a></li>
+            <li><a href="#/about">About</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-            <li><a href="#">Read <span class="new  red badge">4</span></a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="#/chapter">Read <span class="new  red badge">4</span></a></li>
+            <li><a href="#/about">About</a></li>
         </ul>
     </div>
 </nav>
-
-<header class="cover center-align container">
-    <h1>I'm a text </h1>
-    <h2 class="flow-text">Secondary text text text text</h2>
-    <img src="img/img.jpg" alt="Boxy saying hello" class="responsive-img">
-</header>
-<main>
-<section class=" container">
-    <!--About-->
-    <div  class="row" id="about-boxy">
-        <h2 class="center-align">About boxy</h2>
-        <div class="col s12 m5 right">
-            <!-- todo: change pic -->
-            <img src="img/img.jpg" alt="Boxy saying hello" class="responsive-img rounded">
-        </div>
-        <div class="left col s12 m7 left">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam aspernatur assumenda commodi officiis sequi tempora velit? Adipisci animi autem, doloremque ea et fugit iure mollitia quaerat vel velit vitae?</p>
-        </div>
-    </div>
-
-    <!--ABout el Amel-->
-    <div class="row" id="about-amel">
-        <h3 class="center-align">About El Amel Project</h3>
-        <div class="col s12 m5 ">
-            <!-- todo: change pic -->
-            <img src="img/img.jpg" alt="Boxy saying hello" class="responsive-img rounded">
-        </div>
-        <div class="left col s12 m7">
-            <p>Le Centre Berlitz et l’ambassade des Etats-Unis en Algérie sont heureux d’annoncer la reprise du projet "EL AMEL Project " offrant des cours d'anglais aux algériens peu importe leur niveau. Durant ce camp, les étudiants pourront, en plus de perfectionner leur anglais, acquérir des aptitudes en leadership et préparer leurs dossiers d’inscriptions aux Universités Américaines</p>
-        </div>
-    </div>
-
-    <!--Blank, Picture-->
-    <div class="row">
-        <div class="col m12 sections-seperator">
-            <img src="img/img.jpg" alt="">
-        </div>
-    </div>
-
-    <!--meet the team-->
-    <div class="row">
-        <h1 class="center-align">Meet our team</h1>
-        <div class="col s12 m4">
-            <img src="img/img.jpg" alt="" class="responsive-img circle">
-            <p class="center-align">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consectetur culpa
-                cupiditate, dicta, dolore explicabo fugit hic illo pariatur quae rem reprehenderit sunt voluptatum? Culpa
-                doloribus facere sequi sunt voluptate.</p>
-        </div>
-        <div class="col s12 m4">
-        <img src="img/img.jpg" alt="" class="responsive-img circle">
-        <p class="center-align">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consectetur culpa
-            cupiditate, dicta, dolore explicabo fugit hic illo pariatur quae rem reprehenderit sunt voluptatum? Culpa
-            doloribus facere sequi sunt voluptate.</p>
-    </div>
-        <div class="col s12 m4">
-            <img src="img/img.jpg" alt="" class="responsive-img circle">
-            <p class="center-align">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consectetur culpa
-                cupiditate, dicta, dolore explicabo fugit hic illo pariatur quae rem reprehenderit sunt voluptatum? Culpa
-                doloribus facere sequi sunt voluptate.</p>
-        </div>
-        <div class="col s12 m4 push-m2">
-            <img src="img/img.jpg" alt="" class="responsive-img circle">
-            <p class="center-align">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consectetur culpa
-                cupiditate, dicta, dolore explicabo fugit hic illo pariatur quae rem reprehenderit sunt voluptatum? Culpa
-                doloribus facere sequi sunt voluptate.</p>
-        </div>
-        <div class="col s12 m4 push-m2">
-        <img src="img/img.jpg" alt="" class="responsive-img circle">
-        <p class="center-align">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consectetur culpa
-            cupiditate, dicta, dolore explicabo fugit hic illo pariatur quae rem reprehenderit sunt voluptatum? Culpa
-            doloribus facere sequi sunt voluptate.</p>
-    </div>
-    </div>
-</section>
-
-    <section class="center blue darken-3 wide-band">
-        <p class="flow-text white-text">Read more about us at</p>
-        <a class="waves-effect waves-light btn-large blue darken-3"><i class="material-icons right">group_work</i>Meet the Team</a>
-    </section>
-<!--YouTube video-->
-<section class="container">
-    <h3 class="center-align">But, Who's boxy ?</h3>
-
-    <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/pzsc6k4bBIU" frameborder="0" allowfullscreen></iframe>
-    </div>
-
-</section>
+<main ng-view>
 </main>
     <!--FAB-->
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
@@ -136,5 +48,8 @@
 <!-- Compiled and minified JavaScript -->
 <script src="js/materialize.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
