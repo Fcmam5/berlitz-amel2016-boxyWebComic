@@ -1,14 +1,28 @@
-.cover{
-    padding:  0% 3% 3% 3%;
+.cover {
+    padding: 0% 3% 3% 3%;
     height: 90vh;
     overflow: hidden;
 }
 
-.sections-seperator img{
+.sections-seperator img {
     width: 100%;
 }
 
-.wide-band{
+.wide-band {
     padding: 1%;
     margin-bottom: 2%;
+}
+
+.comic-image {
+    display: block;
+    width: 100%;
+}
+
+.fb-comments {
+    width: 100%;
+}
+
+.social-sharing-icons {
+    display: flex;
+    justify-content: center;
 }
