@@ -14,6 +14,9 @@ webComic.config(function ($routeProvider) {
         .when('/about', {
             templateUrl: 'partials/about.html'
         })
+        .when('/team', {
+            templateUrl: 'partials/team.html'
+        })
         .when('/read', {
             templateUrl: 'partials/read.html',
             controller: 'chapterList'
@@ -23,7 +26,6 @@ webComic.config(function ($routeProvider) {
 
 var controllers = {};
 controllers.chapterList = function ($scope) {
-    /*todo: A chapter contains many images*/
     $scope.chapters = [
         {
             'num': 1,
