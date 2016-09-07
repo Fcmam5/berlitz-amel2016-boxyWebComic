@@ -14,11 +14,18 @@
         </form>
 
         <!--Display dynamic chapter section -->
-        <div class="col m8 right s12">
-            <h3>{{selectedChapter.title}}</h3>
-
-            <!--todo: Add next/Back buttons-->
-
+        <div class="col m8 right s12 center" ng-init="pages = 0; nmbrOfPages = selectedChapter.comicImgs.length">
+            <p class="center-align"><strong>Reading: </strong> {{selectedChapter.title}}</p>
+            <button class="btn waves-effect waves-light blue"
+                    ng-disabled="pages <= 0"
+                    ng-click="pages = pages - 1 ">Back
+                <i class="material-icons right">skip_previous</i>
+            </button>
+            <button class="btn waves-effect waves-light blue"
+                    ng-click="pages = pages + 1"
+                    ng-disabled="pages >= nmbrOfPages">Next
+                <i class="material-icons right">skip_next</i>
+            </button>
         </div>
 
     </div>
@@ -26,41 +33,69 @@
     <div class="row">
         <div class="col m12">
             <div class="card">
-                <div class="card-content">
+                <!--Image view-->
+                <div class="card-content" id="comic-head">
+                    <h3>{{selectedChapter.title}}</h3>
                     <!--todo change IMG to Images-->
-                    <img class="comic-image" ng-src="{{selectedChapter.comicImg}}">
+                    <img ng-src="{{selectedChapter.comicImgs[pages]}}" alt="">
+
                 </div>
-                <!--Story section-->
+                <!--Social-->
                 <div class="card-action">
-                    <h3>Chapter #{{selectedChapter.num}}</h3>
-                    <p>{{selectedChapter.story}}</p>
-                    <div class="divider"></div>
-                    <div class="section">
-                        <!-- AddToAny BEGIN -->
-                        <div class="a2a_kit a2a_kit_size_32 a2a_default_style social-sharing-icons">
-                            <a class="a2a_dd"
-                               href="https://www.addtoany.com/share?linkurl=http%3A%2F%2Ffcmam5.github.io%2Fberlitz-amel2016-boxyWebComic%2Fread&amp;linkname="></a>
-                            <a class="a2a_button_facebook"></a>
-                            <a class="a2a_button_twitter"></a>
-                            <a class="a2a_button_google_plus"></a>
-                            <a class="a2a_button_pinterest"></a>
-                            <a class="a2a_button_viber"></a>
-                            <a class="a2a_button_telegram"></a>
-                        </div>
-                        <script>
-                            var a2a_config = a2a_config || {};
-                            a2a_config.linkurl = "http://fcmam5.github.io/berlitz-amel2016-boxyWebComic/read";
-                        </script>
-                        <script async src="https://static.addtoany.com/menu/page.js"></script>
-                        <!-- AddToAny END -->
+                    <!--Next/prev buttons-->
+
+                    <div class="center">
+                        <button class="btn waves-effect waves-light blue"
+                                ng-disabled="pages <= 0"
+                                ng-click="pages = pages - 1 ">Back
+                            <i class="material-icons right">skip_previous</i>
+                        </button>
+                        <button class="btn waves-effect waves-light blue"
+                                ng-click="pages = pages + 1"
+                                ng-disabled="pages >= nmbrOfPages">Next
+                            <i class="material-icons right">skip_next</i>
+                        </button>
+                        <p>{{pages+1 + "of "+ nmbrOfPages}}</p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="col m12 hide-on-small-and-down">
+    </div>
+    <!--Story text-->
+    <div class="row">
+        <div class="col m12">
             <div class="card">
                 <div class="card-content">
+                    <h3>Chapter #{{selectedChapter.num}}</h3>
+                    <p>{{selectedChapter.story}}</p>
+                </div>
+            </div>
+        </div>
+
+        <!--Social section-->
+        <div class="col m12">
+            <div class="card">
+                <div class="card-content center">
+                    <p><strong>Share this !</strong></p>
+                    <!-- AddToAny BEGIN -->
+                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style social-sharing-icons">
+                        <a class="a2a_dd"
+                           href="https://www.addtoany.com/share?linkurl=http%3A%2F%2Ffcmam5.github.io%2Fberlitz-amel2016-boxyWebComic%2Fread&amp;linkname="></a>
+                        <a class="a2a_button_facebook"></a>
+                        <a class="a2a_button_twitter"></a>
+                        <a class="a2a_button_google_plus"></a>
+                        <a class="a2a_button_pinterest"></a>
+                        <a class="a2a_button_viber"></a>
+                        <a class="a2a_button_telegram"></a>
+                    </div>
+                    <script>
+                        var a2a_config = a2a_config || {};
+                        a2a_config.linkurl = "http://fcmam5.github.io/berlitz-amel2016-boxyWebComic/read";
+                    </script>
+                    <script async src="https://static.addtoany.com/menu/page.js"></script>
+                    <!-- AddToAny END -->
+
+
                     <!--Facebook Commetns-->
                     <div id="fb-root"></div>
                     <script>(function (d, s, id) {
@@ -71,7 +106,8 @@
                         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
                         fjs.parentNode.insertBefore(js, fjs);
                     }(document, 'script', 'facebook-jssdk'));</script>
-                    <div class="fb-comments" data-href="http://fcmam5.github.io/berlitz-amel2016-boxyWebComic/read"
+                    <div class="fb-comments"
+                         data-href="http://fcmam5.github.io/berlitz-amel2016-boxyWebComic/read"
                          data-numposts="5" data-width="100%"></div>
                 </div>
             </div>
